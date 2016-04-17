@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<style>
+div.on{ width:100px; height:100px; background:red; margin:100px;}
+</style>
+<script>
+	window.onload=function(){
+		var oBtn=document.querySelector('input');
+		var oDiv=document.querySelector('div');
+		oBtn.onclick=function(){
+			oDiv.classList.remove('active');
+			alert(oDiv.classList.contains('active'));
+		}
+	};
+</script>
+<body>
+<input type="button" value="切换class" />
+<div class="on red active linear"></div>
+
+</body>
+</html>

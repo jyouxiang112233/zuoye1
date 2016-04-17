@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<style>
+div.on{ width:100px; height:100px; background:red; margin:100px;}
+div.active{ width:100px; height:100px; -webkit-transform:scale(2,2);background:red; margin:100px;}
+div.red{ width:100px; height:100px; -webkit-transform:scale(2,2);background:yellow;margin:100px;}
+div.linear{ width:100px; height:100px; -webkit-transform:scale(2,2);background:-webkit-linear-gradient(red,blue);margin:100px;}
+</style>
+<script>
+	window.onload=function(){
+		var oBtn=document.querySelector('input');
+		var oDiv=document.querySelector('div');
+		var count=0; 
+		oBtn.onclick=function(){
+			if(count==0){
+				oDiv.classList.toggle('on');
+				console.log(count);
+			}else if(count==1){
+				oDiv.classList.toggle('active');
+				console.log(count);
+			}else if(count==2){
+				oDiv.classList.toggle('red');
+				console.log(count);
+			}else if(count==3){
+				oDiv.classList.toggle('linear');
+				console.log(count);
+			}
+			count++;
+			if(count==4){
+				count=0;	
+			}
+		};
+	};
+</script>
+<body>
+<input type="button" value="切换class" />
+<div class="on"></div>
+
+</body>
+</html>

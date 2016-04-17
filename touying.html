@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<style>
+	*{ margin:0; padding:0;}
+	.sun{ width:100px; height:100px; border-radius:50%; background:#FC0; box-shadow:0 0 100px #F90; position:absolute; left:0; top:0;}
+	p{width:340px; height:100px; text-align:center; line-height:100px;font-size:30px; margin:200px auto; font-weight:bold; font-family:'微软雅黑'; color:#00F; text-shadow:10px 10px 3px #000;}
+</style>
+<script>
+window.onload=function(){
+	var oSun=document.querySelector('.sun');
+	var oP=document.querySelector('p');
+	document.onmousemove=function(ev){
+		oSun.style.left=ev.pageX-50+'px';
+		oSun.style.top=ev.pageY-50+'px';
+		var disX = (oP.offsetLeft+oP.offsetWidth/2)-(oSun.offsetLeft+oSun.offsetWidth/2);	
+		var disY = (oP.offsetTop+oP.offsetHeight/2)-(oSun.offsetTop+oSun.offsetHeight/2);
+		var c =Math.sqrt(disX*disX+disY*disY);
+		oP.style.textShadow=(disX/2)+'px '+(disY/2)+'px '+c/20+'px #000';
+	};
+};
+
+</script>
+<body>
+<div class="sun"></div>
+<p>我是投影，我是天下笨蛋</p>
+</body>
+</html>
